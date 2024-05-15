@@ -1,7 +1,5 @@
 
-###########################################
 # BASE IMAGE
-###########################################
 
 FROM ubuntu AS build
 
@@ -13,9 +11,9 @@ COPY . .
 
 RUN CGO_ENABLED=0 go build -o /app .
 
-############################################
-# HERE STARTS THE MAGIC OF MULTI STAGE BUILD
-############################################
+
+# MULTI STAGE BUILD
+
 
 FROM scratch
 
